@@ -1,6 +1,5 @@
 package com.alevel.Proectis1;
 
-
 import java.util.Scanner;
 
 public class Task20 {
@@ -25,5 +24,4 @@ public class Task20 {
         System.out.println("Максимальное число: " + max);
         System.out.println("Минимальное число: " + min);
     }
-
 }
