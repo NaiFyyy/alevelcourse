@@ -1,4 +1,15 @@
 package com.alevel.hometask.oop2;
 
-public class Iron {
+import javax.swing.plaf.nimbus.State;
+
+public final class Iron implements  Substance {
+    @Override
+    public State heatUp(double t) {
+        return null;
+    }
+
+    @Override
+    public double getTemperature() {
+        return 0;
+    }
 }
