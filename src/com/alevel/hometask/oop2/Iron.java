@@ -1,15 +1,23 @@
 package com.alevel.hometask.oop2;
 
-import javax.swing.plaf.nimbus.State;
-
 public final class Iron implements  Substance {
+    private double temp = 20;
+
     @Override
     public State heatUp(double t) {
-        return null;
+        temp += t;
+        State state;
+        if (temp > 1538) {
+            state = State.LIQUID;
+        }
+        else{
+            state = State.SOLID;
+        }
+        return state;
     }
 
     @Override
     public double getTemperature() {
-        return 0;
+        return temp;
     }
 }

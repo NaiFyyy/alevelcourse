@@ -4,6 +4,4 @@ public enum State {
     LIQUID,
     GAS,
     SOLID;
-
-
 }

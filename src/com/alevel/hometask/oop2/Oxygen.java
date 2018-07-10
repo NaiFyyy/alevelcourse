@@ -1,15 +1,19 @@
 package com.alevel.hometask.oop2;
 
-import javax.swing.plaf.nimbus.State;
 
 public class Oxygen implements Substance {
+    private double temp = 20;
+
     @Override
     public State heatUp(double t) {
-        return null;
+        temp += t;
+        State state;
+        state = State.GAS;
+        return state;
     }
 
     @Override
     public double getTemperature() {
-        return 0;
+        return temp;
     }
 }
