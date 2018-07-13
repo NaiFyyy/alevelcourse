@@ -1,6 +1,6 @@
 package com.alevel.hometask.oop2;
 
-public final class Iron implements  Substance {
+public final class Iron implements Substance {
     private double temp = 20;
 
     @Override
@@ -9,8 +9,7 @@ public final class Iron implements  Substance {
         State state;
         if (temp > 1538) {
             state = State.LIQUID;
-        }
-        else{
+        } else {
             state = State.SOLID;
         }
         return state;
