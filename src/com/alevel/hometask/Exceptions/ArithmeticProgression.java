@@ -13,7 +13,6 @@ public class ArithmeticProgression {
         this.step = step;
     }
 
-
     int calculate(int n) throws ProgressionConfigurationException {
         if (n <= 0) {
             throw new ProgressionConfigurationException("Need n > 0");
