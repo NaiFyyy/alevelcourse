@@ -15,8 +15,8 @@ public class Main {
             try {
                 System.out.print("Result : ");
                 System.out.println(new ArithmeticProgression(initial, step).calculate(n));
-            } catch (ProgressionConfigurationException i) {
-                System.err.println(i.getMessage());
+            } catch (ProgressionConfigurationException e) {
+                System.err.println(e.getMessage());
             }
             break;
         }
