@@ -1,4 +1,5 @@
 package com.alevel.Module1.Task1;
 
-public class Vagon {
+public interface Vagon {
+    String display();
 }
