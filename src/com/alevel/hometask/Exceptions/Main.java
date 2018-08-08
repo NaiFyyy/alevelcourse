@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        while (true) {
             System.out.println("Введите initial :");
             int initial = scanner.nextInt();
             System.out.println("Введите step:");
@@ -18,7 +17,5 @@ public class Main {
             } catch (ProgressionConfigurationException e) {
                 System.err.println(e.getMessage());
             }
-            break;
-        }
     }
 }
