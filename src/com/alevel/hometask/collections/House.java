@@ -4,12 +4,12 @@ public class House<T extends Animal> {
     private PetList<T> dwellers;
     private int amount;
 
-    public House() {
+    House() {
         this.dwellers = new PetList<T>();
         this.amount = this.dwellers.size();
     }
 
-    public PetList<T> getDwellers() {
+    PetList<T> getDwellers() {
         return dwellers;
     }
 

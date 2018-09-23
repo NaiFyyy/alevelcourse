@@ -5,7 +5,7 @@ public abstract class Animal {
     private String name;
     private String color;
 
-    public Animal(int age, String name, String oolor) {
+    Animal(int age, String name, String oolor) {
         this.age = age;
         this.name = name;
         this.color = oolor;

@@ -2,7 +2,7 @@ package com.alevel.hometask.collections;
 
 import java.util.Arrays;
 
-public class PetList<T> {
+class PetList<T> {
     private T[] info;
     private int position;
 
@@ -10,31 +10,31 @@ public class PetList<T> {
         this(10);
     }
 
-    PetList(int quantity) {
+    private PetList(int quantity) {
         this.info = (T[]) new Object[quantity];
         this.position = 0;
     }
 
-    public int size() {
-        return this.info.length;
+    int size() {
+        return position;
     }
 
-    public void add(T element) {
-        if (position == size()) {
-            T[] temp;
-            temp = Arrays.copyOf(this.info, size());
-            this.info = temp;
+
+    void add(T element) {
+        if (position == info.length - 1) {
+            this.info = Arrays.copyOf(this.info, info.length * 2);
         }
         this.info[position] = element;
         position++;
     }
 
-    public void print() {
-        for (T element : this.info) {
-            if (element == null) {
-                break;
-            }
-            System.out.println(element.toString());
+    T get(int index) {
+        return info[index];
+    }
+
+    void print() {
+        for (int i = 0; i < position; i++) {
+            System.out.println(info[i]);
         }
     }
 }

@@ -1,6 +1,5 @@
 package com.alevel.practice.oop;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {

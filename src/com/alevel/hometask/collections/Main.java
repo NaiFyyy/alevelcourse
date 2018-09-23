@@ -29,17 +29,17 @@ public class Main {
         }
     }
 
-    public static void addCat(PetList<Cat> cats) {
+    private static void addCat(PetList<Cat> cats) {
         cats.add(new Cat(3, "Katya", "red"));
         cats.add(new Cat(7, "Lisa", "blue"));
     }
 
-    public static void addDog(PetList<Dog> dogs) {
+    private static void addDog(PetList<Dog> dogs) {
         dogs.add(new Dog(6, "Bony", "orange"));
         dogs.add(new Dog(5, "Sheldon", "black"));
     }
 
-    public static void addHamster(PetList<Hamster> hamsters) {
+    private static void addHamster(PetList<Hamster> hamsters) {
         hamsters.add(new Hamster(2, "Snoop", "white"));
         hamsters.add(new Hamster(3, "Scooby", "white"));
     }

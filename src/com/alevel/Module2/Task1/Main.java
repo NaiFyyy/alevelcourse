@@ -1,4 +1,4 @@
-package com.alevel.Module2.Task1;
+package com.alevel.Module2.Task1.Task1;
 
 import java.util.ArrayList;
 import java.util.List;
