@@ -1,4 +1,4 @@
-package com.alevel.jdbcbox;
+package com.alevel.jdbcbox.common;
 public class StorageException extends Exception {
 
     public StorageException() {

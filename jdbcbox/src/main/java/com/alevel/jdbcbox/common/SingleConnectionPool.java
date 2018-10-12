@@ -1,4 +1,4 @@
-package com.alevel.jdbcbox;
+package com.alevel.jdbcbox.common;
 
 import java.sql.Connection;
 import java.util.function.Supplier;
