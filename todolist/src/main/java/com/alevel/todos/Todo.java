@@ -10,11 +10,6 @@ public class Todo {
     private String text;
     private Boolean done;
 
-    public Todo(String text) {
-        this.id = null;
-        this.text = text;
-        this.done = false;
-    }
     @JsonCreator
     public Todo(
         @JsonProperty("id") Long id,
