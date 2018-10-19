@@ -1,5 +1,8 @@
 package com.alevel.todos;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.Objects;
 
 public class Todo {
@@ -12,12 +15,17 @@ public class Todo {
         this.text = text;
         this.done = false;
     }
-
-    public Todo(Long id, String text, Boolean done) {
-        this.id = id;
-        this.text = text;
-        this.done = done;
+    @JsonCreator
+    public Todo(
+        @JsonProperty("id") Long id,
+        @JsonProperty("text") String text,
+        @JsonProperty("done") Boolean done
+    ){
+        this.id=id;
+        this.text=text;
+        this.done=done;
     }
+
 
     public Long getId() {
         return id;
@@ -33,8 +41,8 @@ public class Todo {
 
     @Override
     public boolean equals(Object o) {
-        if(
-            this == o
+        if (
+                this == o
         ) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Todo todo = (Todo) o;
