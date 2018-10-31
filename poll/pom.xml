@@ -30,17 +30,24 @@
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <version>2.2</version>
                 <configuration>
-                    <port>9090</port>
+                    <port>5449</port>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+
     <dependencies>
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
             <version>8.0</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
@@ -72,13 +79,6 @@
             <artifactId>logback-classic</artifactId>
             <version>1.2.3</version>
         </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
-        </dependency>
+
     </dependencies>
-
-
 </project>

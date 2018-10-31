@@ -8,16 +8,13 @@ public class Poll {
     private String question;
     private String answer;
 
-    public Long getId() {
-        return id;
-    }
-    public String getQuestion() {
+    String getQuestion() {
         return question;
     }
-    public String getAnswer() {
+
+    String getAnswer() {
         return answer;
     }
-
 
     @JsonCreator
     public Poll(

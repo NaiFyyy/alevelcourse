@@ -1,42 +1,71 @@
-var questionInput = document.getElementById("question-input");
-var pollsHtml = document.getElementById("polls");
-var polls = [];
+document.getElementById("answer").style.display = "none";
+document.getElementById("myanswer").style.display = "none";
+var quest = document.getElementById("question");
+var myanswer = document.getElementById("myanswer");
+var button = document.getElementById("button-search");
 
-function setupListeners() {
-    questionInput.addEventListener('keyup', function (event) {
-        if (event.key === 'Enter') {
-            inputQuestion();
-        }
-    });
-    document.getElementById('add').addEventListener('click', function () {
-        inputQuestion();
-    });
-}
-
-function inputQuestion() {
-    var inputValue = questionInput.value;
-    if (inputValue === '') {
-        alert("You must write something!");
-        return;
+button.addEventListener('keyup', function (event) {
+    if (event.key === 'Enter') {
+        var inputValue = quest.value;
+        var answer = myanswer.value;
+        var newQ = {
+            question: inputValue,
+            answer: answer
+        };
+        axios.post('question', newQ)
+            .then(function (result) {
+                document.getElementById("myanswer").style.display = "none";
+                myanswer.value = "";
+                quest.value = "";
+            })
+            .catch(function (reason) {
+                console.error(reason);
+            });
     }
-    var newPoll = {
-        question: inputValue
-    };
+});
 
-    axios.post('poll', newPoll)
-        .then(function (result) {
-            newPoll.id = result.data.id;
-            addElement(newPoll);
-            questionInput.value = '';
+myanswer.addEventListener('keyup', function (event) {
+    if (event.key === 'Enter') {
+        var inputValue = quest.value;
+        var answer = myanswer.value;
+        var newQ = {
+            question: inputValue,
+            answer: answer
+        };
+        axios.post('question', newQ)
+            .then(function (result) {
+                document.getElementById("myanswer").style.display = "none";
+                myanswer.value = "";
+                quest.value = "";
+            })
+            .catch(function (reason) {
+                console.error(reason);
+            });
+    }
+});
+
+quest.addEventListener('keyup', function (event) {
+    if (event.key === 'Enter') {
+        axios.get('question', {
+            params: {
+                answer: quest.value
+            }
         })
-        .catch(function (reason) {
-            console.error(reason);
-        });
-}
+            .then(function (result) { //if request was successfully served, we get back the data
+                var ans = result.data.answer;
+                document.getElementById("answer").style.display = "block";
+                document.getElementById("answer").value = ans;
 
-function addElement(poll) {
-    var list = document.createElement('li');
-    list.appendChild(document.createTextNode(poll.text));
-    pollsHtml.appendChild(list);
-    polls.push(poll);
-}
+
+            })
+            .catch(function (reason) {
+                if (reason.response.status === 500) {
+                    document.getElementById("answer").style.display = "none";
+                    myanswer.value = "";
+                    document.getElementById("myanswer").style.display = "block";
+                }
+
+            });
+
+    }
+});
